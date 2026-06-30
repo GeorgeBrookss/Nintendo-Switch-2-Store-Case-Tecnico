@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
-import { IMaskInput } from "react-imask";
 type Props = {
   isOpen: boolean;
   onClose: () => void;
