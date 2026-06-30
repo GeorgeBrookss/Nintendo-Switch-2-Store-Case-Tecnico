@@ -6,14 +6,15 @@ export type Category =
     |'Esporte'
     |'Festa'
 
-
 export interface Product {
     id: number
-    title:string
-    category:Category
+    title: string
+    category: Category
     price: number
     description: string
     image: string
+    gallery: string[]
+    background: string
     sale: boolean
     releaseDate: string
 }

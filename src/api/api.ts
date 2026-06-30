@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001/products'
+const BASE_URL = 'https://nintendo-switch-2-store-api-2.onrender.com/products'
 
 export const getProducts = async () => {
     const res = await fetch(BASE_URL)

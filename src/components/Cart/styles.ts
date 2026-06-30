@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
+import { IMaskInput } from "react-imask";
 
 export const CartOverlay = styled.div<{ $isOpen: boolean }>`
     position: fixed;
@@ -102,7 +103,6 @@ export const Input = styled.input`
     color: ${theme.colors.white};
     font-size: 0.9rem;
     outline: none;
-
         &:focus {
             border-color: ${(props) => props.theme.colors?.primary || `${theme.colors.primary}`};
         }
@@ -112,7 +112,6 @@ export const CartFooter = styled.div`
     margin-top: 20px;
     border-top: 1px solid ${theme.colors.text};
     padding-top: 15px;
-
         h3 {
             margin-bottom: 15px;
         }
@@ -129,13 +128,24 @@ export const ActionButton = styled.button<{ $variant?: "secondary" }>`
     font-weight: bold;
     cursor: pointer;
     transition: filter 0.2s;
-
         &:disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
-
         &:hover:not(:disabled) {
             filter: brightness(1.1);
         }
 `;
+
+export const MaskInput = styled(IMaskInput)`
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid ${theme.colors.text};
+    background: ${theme.colors.secondary};
+    color: ${theme.colors.white};
+    font-size: 0.9rem;
+    outline: none;
+        &:focus {
+            border-color: ${(props) => props.theme.colors?.primary || `${theme.colors.primary}`};
+        }
+`

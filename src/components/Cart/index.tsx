@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
-
+import { IMaskInput } from "react-imask";
 type Props = {
   isOpen: boolean;
   onClose: () => void;
@@ -29,14 +29,15 @@ const Cart = ({ isOpen, onClose }: Props) => {
 
   const isFormValid = () => {
     const { nome, email, cpf, tel, cartao } = formData;
+
     return (
-      nome.length > 3 &&
-      email.includes("@") &&
-      cpf.replace(/\D/g, "").length === 11 &&
-      tel.replace(/\D/g, "").length >= 10 &&
-      cartao.replace(/\D/g, "").length === 16
+        nome.trim().length > 3 &&
+        email.includes("@") &&
+        cpf.replace(/\D/g, "").length === 11 &&
+        tel.replace(/\D/g, "").length === 11 &&
+        cartao.replace(/\D/g, "").length === 16
     );
-  };
+};
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -75,9 +76,30 @@ const Cart = ({ isOpen, onClose }: Props) => {
           <S.CheckoutForm>
             <S.Input name="nome" placeholder="Nome Completo" onChange={handleInputChange} />
             <S.Input name="email" type="email" placeholder="E-mail" onChange={handleInputChange} />
-            <S.Input name="cpf" placeholder="CPF" maxLength={11} onChange={handleInputChange} />
-            <S.Input name="tel" placeholder="Telefone" onChange={handleInputChange} />
-            <S.Input name="cartao" placeholder="Número do Cartão" maxLength={16} onChange={handleInputChange} />
+            <S.MaskInput
+              mask="000.000.000-00"
+              value={formData.cpf}
+              placeholder="CPF"
+              onAccept={(value) =>
+                  setFormData({ ...formData, cpf: value as string })
+              }
+            />
+            <S.MaskInput
+              mask="(00) 00000-0000"
+              value={formData.tel}
+              placeholder="Telefone"
+              onAccept={(value) =>
+                  setFormData({ ...formData, tel: value as string })
+              }
+            />
+            <S.MaskInput
+              mask="0000 0000 0000 0000"
+              value={formData.cartao}
+              placeholder="Número do Cartão"
+              onAccept={(value) =>
+                  setFormData({ ...formData, cartao: value as string })
+              }
+            />
             <p>
               Total: <strong>R$ {total.toFixed(2)}</strong>
             </p>

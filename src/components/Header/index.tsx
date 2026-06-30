@@ -1,5 +1,7 @@
 import * as S from "./styles";
 import CartIcon from "../../assets/images/Icons/CartIcon.png"
+import LogoImg from "../../assets/images/Icons/Nintendo_Switch_2_logo.svg.webp"
+import { MainTitle, NavButton } from "./styles";
 type Props = {
   onToggleCart: () => void;
 };
@@ -8,12 +10,23 @@ const Header = ({ onToggleCart }: Props) => {
   return (
     <S.HeaderContainer>
     <S.NavLink to="/">
-      <h2>Switch 2 Store</h2>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <S.Logo src={LogoImg} alt="Nintendo Switch 2 Store" />
+        <MainTitle>Switch 2 Store</MainTitle>
+      </div>
     </S.NavLink>
 
       <S.Nav>
-        <S.NavLink to="/">Home</S.NavLink>
-        <S.NavLink to="/categorias">Categorias</S.NavLink>
+        <S.NavLink to="/">
+        <NavButton>        
+        Home
+        </NavButton>
+        </S.NavLink>
+        <S.NavLink to="/categorias">
+        <NavButton>
+        Categorias
+        </NavButton>
+        </S.NavLink>
         <S.CartButton onClick={onToggleCart}>
           <img src={CartIcon} alt="Carrinho de Compras" />
         </S.CartButton>

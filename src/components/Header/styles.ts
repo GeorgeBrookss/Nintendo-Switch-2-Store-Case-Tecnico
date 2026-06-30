@@ -57,3 +57,55 @@ export const CartButton = styled.button`
         transform: scale(1.1);
     }
 `;
+
+export const Logo = styled.img`
+    max-width: 100px;
+    max-height: 50px;
+    border-radius: 10px;
+    margin-right: 10px;
+
+    @media (max-width: 767px) {
+        max-width: 20px;
+        border-radius: 3px;
+
+    }
+    @media (max-width: 500px) {
+        font-size: 12px;
+        gap: 22px;
+    }
+`;
+
+export const MainTitle = styled.h1`
+    font-size: 24px;
+    font-weight: bold;
+    color: ${theme.colors.primary};
+
+    &:hover {
+        color: ${theme.colors.secondary};
+    }   
+
+    @media (max-width: 767px) {
+        font-size: 15px;
+    }
+    @media (max-width: 500px) {
+        font-size: 10px;
+        gap: 22px;
+    }
+    @media (max-width: 374px) {
+        width: 40px;
+        gap: 22px;
+    }
+`;
+
+export const NavButton = styled.button`
+    font-size: 15px;
+    color: ${theme.colors.primary};
+    background: transparent;
+    border: none;
+    
+    &:hover {
+        color: ${theme.colors.secondary};
+        border-bottom: 2px solid ${theme.colors.secondary};   
+    }
+
+`

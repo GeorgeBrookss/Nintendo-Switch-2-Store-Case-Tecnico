@@ -45,7 +45,7 @@ export const Message = styled.p`
   font-size: 1.2rem;
   margin-bottom: 30px;
   line-height: 1.6;
-  color: ${theme.colors.primary};
+  color: ${theme.colors.success};
 `
 
 export const WarningBox = styled.div`

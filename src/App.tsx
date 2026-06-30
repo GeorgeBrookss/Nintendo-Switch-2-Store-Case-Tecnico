@@ -10,6 +10,8 @@ import  Home  from "./pages/Home";
 import  Produto from "./pages/Produto";
 import  Categorias from "./pages/Categorias";
 import  Success from "./pages/Success";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   const context = useContext(CartContext);
@@ -22,7 +24,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <GlobalStyle />
-
+        <ScrollToTop />
         <Header onToggleCart={() => setIsOpen(!isOpen)} />
         <Cart isOpen={isOpen} onClose={() => setIsOpen(false)} />
 
@@ -32,6 +34,7 @@ function App() {
           <Route path="/categorias" element={<Categorias />} />
           <Route path="/sucesso" element={<Success />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
