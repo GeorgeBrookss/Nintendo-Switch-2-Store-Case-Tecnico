@@ -43,6 +43,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         .filter((p) => p.quantity > 0)
     )
   }
+  const clearCart = () => {
+    setCart([]);
+  }
 
   return (
     <CartContext.Provider 
@@ -51,7 +54,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         isOpen, 
         setIsOpen, 
         addToCart, 
-        decreaseQuantity 
+        decreaseQuantity,
+        clearCart
       }}
     >
       {children}

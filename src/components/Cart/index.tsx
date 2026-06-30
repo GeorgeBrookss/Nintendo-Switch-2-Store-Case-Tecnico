@@ -17,7 +17,7 @@ const Cart = ({ isOpen, onClose }: Props) => {
   });
 
   if (!context) return null;
-  const { cart, addToCart, decreaseQuantity } = context;
+  const { cart, addToCart, decreaseQuantity, clearCart } = context;
 
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
@@ -40,6 +40,18 @@ const Cart = ({ isOpen, onClose }: Props) => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFinalizePurchase = () => {
+    onClose();
+    navigate("/sucesso");
+    if (clearCart) {
+      clearCart(); 
+    }
+    setTimeout(() => {
+      setStep("cart");
+      setFormData({ nome: "", email: "", cpf: "", tel: "", cartao: "" });
+    }, 300);
   };
 
   return (
@@ -123,10 +135,7 @@ const Cart = ({ isOpen, onClose }: Props) => {
             </S.ActionButton>
             <S.ActionButton
               disabled={!isFormValid()}
-              onClick={() => {
-                onClose();
-                navigate("/sucesso");
-              }}
+              onClick={handleFinalizePurchase}
             >
               Pagar Agora
             </S.ActionButton>

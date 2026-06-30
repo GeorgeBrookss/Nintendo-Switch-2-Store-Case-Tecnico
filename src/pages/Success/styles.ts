@@ -11,8 +11,9 @@ export const Overlay = styled.div`
   background-color: ${theme.colors.white};
   color: ${(props) => props.theme.colors.white};
   text-align: center;
-  padding: 20px;
-  position: fixed;
+  padding: 40px 20px;
+  position: absolute;
+  overflow-y: auto;
   top: 0;
   left: 0;
   z-index: 10000;
@@ -29,9 +30,18 @@ export const Content = styled.div`
 `
 
 export const Icon = styled.span`
-  font-size: 5rem;
   display: block;
+  justify-self: center;
+  max-width: 300px;
   margin-bottom: 10px;
+  margin-top: 200px;
+
+  @media(max-width:768px){
+      img{
+        width:100px;
+    }
+  }
+
 `
 
 export const Title = styled.h1`
@@ -39,6 +49,10 @@ export const Title = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: ${(props) => props.theme.fonts.bold};
+
+  @media(max-width:768px){
+      font-size: 20px;
+  }
 `
 
 export const Message = styled.p`
@@ -78,6 +92,7 @@ export const HomeButton = styled.button`
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
+  
 
   &:hover {
     transform: scale(1.05);

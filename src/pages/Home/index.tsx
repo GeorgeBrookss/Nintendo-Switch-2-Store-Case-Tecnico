@@ -4,6 +4,7 @@ import ProductCard from "../../components/ProductCard";
 import type { Product } from "../../types/Product";
 import {HomePage, ListaGames, ListaGames2} from './styles'
 import Banner from '../../components/Banner'
+import { BlinkBlur } from "react-loading-indicators";
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -40,10 +41,8 @@ const Home = () => {
             color: '#fff',
             fontFamily: 'sans-serif'
           }}>
-            <h3 style={{ marginBottom: '10px' }}>Carregando catálogo...</h3>
-            <p style={{ fontSize: '13px', opacity: 0.6 }}>
-              O servidor gratuito do Render pode levar até 50 segundos para despertar no primeiro acesso.
-            </p>
+            <h3 style={{ marginBottom: '10px', color: '#8b0000' }}>Carregando catálogo...</h3>
+            <BlinkBlur color={["#7a1d1d", "#a32727", "#cc3131", "#d75959"]} />
           </div>
         ) : (
           <>

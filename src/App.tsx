@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { CartContext } from "./context/CartContext";
@@ -13,28 +13,39 @@ import  Success from "./pages/Success";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop"
 
-function App() {
+const AppContent = () => {
   const context = useContext(CartContext);
+  const location = useLocation();
 
   if (!context) return null;
 
   const { isOpen, setIsOpen } = context;
 
+  const noFooter = location.pathname === '/sucesso';
+
+  return (
+    <>
+      <ScrollToTop />
+      <Header onToggleCart={() => setIsOpen(!isOpen)} />
+      <Cart isOpen={isOpen} onClose={() => setIsOpen(false)} />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/produto/:id" element={<Produto />} />
+        <Route path="/categorias" element={<Categorias />} />
+        <Route path="/sucesso" element={<Success />} />
+      </Routes>
+      {!noFooter && <Footer />}
+    </>
+  );
+};
+
+function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <GlobalStyle />
-        <ScrollToTop />
-        <Header onToggleCart={() => setIsOpen(!isOpen)} />
-        <Cart isOpen={isOpen} onClose={() => setIsOpen(false)} />
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/produto/:id" element={<Produto />} />
-          <Route path="/categorias" element={<Categorias />} />
-          <Route path="/sucesso" element={<Success />} />
-        </Routes>
-        <Footer />
+        <AppContent />
       </BrowserRouter>
     </ThemeProvider>
   );

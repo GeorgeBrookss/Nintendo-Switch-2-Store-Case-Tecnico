@@ -11,6 +11,7 @@ export type CartContextType = {
     setIsOpen: (isOpen: boolean) => void;
     addToCart: (product: Product) => void;
     decreaseQuantity: (id: number) => void;
+    clearCart: () => void;
 };
 
 export const CartContext = createContext<CartContextType | null>(null);
