@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# Nintendo Switch 2 Store - Case Técnico
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Este projeto é uma simulação de e-commerce focada no lançamento do Nintendo Switch 2, desenvolvida originalmente como parte de um desafio técnico para Desenvolvedor Front-End Júnior.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Evolução Pós-Feedback (Entrevista Técnica)
+Após a realização da entrevista técnica, o projeto passou por um ciclo completo de code review e refatoração com base nos feedbacks recebidos. Foram implementadas melhorias significativas em experiência do usuário, fidelidade visual e arquitetura de deploy:
 
-## React Compiler
+- **Galeria Dinâmica de Imagens:** Cada jogo agora conta com uma galeria de capturas de tela exclusivas na sua página de detalhes.
+- **Imersão Visual (Fundo Personalizado):** O plano de fundo da página de detalhes do produto adapta-se dinamicamente usando a arte e a identidade visual do jogo selecionado.
+- **Máscaras de Input no Checkout:** Implementação de máscaras de formatação em tempo real para os campos de **CPF, Telefone e Cartão de Crédito**, garantindo maior consistência dos dados e melhor UX.
+- **Deploy 100% Online e Distribuído:** A aplicação foi migrada do ambiente local para uma infraestrutura real de produção:
+  - **Front-end:** Hospedado na **Vercel** com suporte a reescrita de rotas para Single Page Applications (evitando erros de 404 no refresh).
+  - **Back-end (API):** Banco de dados JSON simulado hospedado e rodando de forma estável no **Render**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Links do Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Live Demo (Front-end):** [https://nintendo-switch-2-store.vercel.app](https://nintendo-switch-2-store.vercel.app)
+- **API REST (Back-end):** Hospedado no Render
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tecnologias Utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **React + Vite:** Ferramental moderno para desenvolvimento SPA rápido, leve e otimizado.
+- **TypeScript:** Tipagem estática estrita para maior segurança, autocomplete e facilidade na manutenção do código.
+- **Styled Components:** Estilização baseada em componentes com suporte a temas globais e propriedades dinâmicas (essencial para o fundo personalizado).
+- **React Router Dom:** Gerenciamento avançado de rotas internas (Home, Categorias, Produto).
+- **JSON Server:** Simulação completa de uma API REST com persistência de dados.
+- **ESLint:** Padronização, boas práticas e consistência na qualidade do código.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Funcionalidades Principais
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Página Inicial:** Banners promocionais em carrossel e vitrines segmentadas dinamicamente (Promoções e Novidades).
+- **Catálogo Inteligente:** Listagem completa de jogos com filtragem dinâmica por categorias e gêneros.
+- **Detalhes Imersivos do Produto:** Galeria de mídias, descrição detalhada, carregamento de background temático e preços formatados no padrão monetário `pt-BR`.
+- **Carrinho de Compras:** Gerenciamento completo de estado (adicionar, remover, atualizar quantidades) com cálculo automático de totais.
+- **Checkout Validado:** Formulário de finalização de compra com validações impeditivas, feedback visual de erro e máscaras de digitação.
+- **Responsividade Total:** Layout fluido e adaptável para qualquer tamanho de tela (Mobile, Tablet e Desktop) utilizando CSS Grid e Flexbox.
+
+---
+
+## Desenvolvolvedor
+- **George Brooks**
