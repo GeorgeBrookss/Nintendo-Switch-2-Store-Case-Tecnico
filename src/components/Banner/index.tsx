@@ -5,10 +5,10 @@ import miiBanner from '../../../public/assets/images/carousel/Mii.avif'
 import splatoonBanner from '../../../public/assets/images/carousel/Splatoon.avif'
 import yoshiBanner from '../../../public/assets/images/carousel/YoshiBanner.avif'
 import starFoxBanner from '../../../public/assets/images/carousel/StarFox.avif'
-import starfoxThumb from '../../../public/assets/images/Icons/starfox.jpg'
-import miiThumb from '../../../public/assets/images/Icons/tomodachi.webp'
-import splatoonThumb from '../../../public/assets/images/Icons/splatoon.png'
-import yoshiThumb from '../../../public/assets/images/Icons/yoshi.png'
+import starfoxThumb from '../../../public/assets/images/carousel/icons/starfox.jpg'
+import miiThumb from '../../../public/assets/images/carousel/icons/tomodachi.webp'
+import splatoonThumb from '../../../public/assets/carousel/icons/splatoon.png'
+import yoshiThumb from '../../../public/assets/carousel/icons/yoshi.png'
 
 
 export function Banner() {
