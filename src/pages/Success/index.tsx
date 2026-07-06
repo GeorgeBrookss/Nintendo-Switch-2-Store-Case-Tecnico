@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import * as S from "./styles"
-import SuccessIcon from "../../assets/images/Icons/SuccessImg.webp"
+import SuccessIcon from "../../../public/assets/images/Icons/SuccessImg.webp"
 
 const Success = () => {
   return (

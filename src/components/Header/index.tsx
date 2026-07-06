@@ -1,6 +1,6 @@
 import * as S from "./styles";
-import CartIcon from "../../assets/images/Icons/CartIcon.png"
-import LogoImg from "../../assets/images/Icons/Nintendo_Switch_2_logo.svg.webp"
+import CartIcon from "../../../public/assets/images/Icons/CartIcon.png"
+import LogoImg from "../../../public/assets/images/Icons/Nintendo_Switch_2_logo.svg.webp"
 import { MainTitle, NavButton } from "./styles";
 type Props = {
   onToggleCart: () => void;

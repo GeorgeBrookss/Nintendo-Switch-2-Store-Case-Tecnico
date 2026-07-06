@@ -8,7 +8,7 @@ import starFoxBanner from '../../../public/assets/images/carousel/StarFox.avif'
 import starfoxThumb from '../../../public/assets/images/carousel/icons/starfox.jpg'
 import miiThumb from '../../../public/assets/images/carousel/icons/tomodachi.webp'
 import splatoonThumb from '../../../public/assets/images/carousel/icons/splatoon.png'
-import yoshiThumb from '../../../public/assets/images/carousel/icons/yoshi.png'
+import yoshiThumb from '../../../public/assets/images/carousel//icons/Yoshibutton.jpg'
 
 
 export function Banner() {
