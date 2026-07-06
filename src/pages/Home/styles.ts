@@ -24,7 +24,6 @@ export const ListaGames = styled.div`
     justify-self: center;
     margin-bottom: 40px;
     padding-bottom: 20px;
-    border-bottom: 2px solid ${(props) => props.theme.colors.primary};
 
     @media (max-width: 900px) {
         grid-template-columns: 1fr 1fr;
@@ -44,6 +43,7 @@ export const ListaGames2 = styled.div`
     justify-self: center;
     margin-bottom: 40px;
     padding-bottom: 20px;
+    border-bottom: 2px solid ${(props) => props.theme.colors.primary};
 
     @media (max-width: 900px) {
         grid-template-columns: 1fr 1fr;
