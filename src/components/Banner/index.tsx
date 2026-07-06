@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
 import * as S from './styles'
-import miiBanner from '../../assets/images/carousel/Mii.avif'
-import splatoonBanner from '../../assets/images/carousel/Splatoon.avif'
-import yoshiBanner from '../../assets/images/carousel/YoshiBanner.avif'
-import starFoxBanner from '../../assets/images/carousel/StarFox.avif'
-import starfoxThumb from '../../assets/images/carousel/icons/starfox.jpg'
-import miiThumb from '../../assets/images/carousel/icons/tomodachi.webp'
-import splatoonThumb from '../../assets/images/carousel/icons/splatoon.png'
-import yoshiThumb from '../../assets/images/carousel/icons/Yoshibutton.jpg'
+import miiBanner from '../../../public/assets/images/carousel/Mii.avif'
+import splatoonBanner from '../../../public/assets/images/carousel/Splatoon.avif'
+import yoshiBanner from '../../../public/assets/images/carousel/YoshiBanner.avif'
+import starFoxBanner from '../../../public/assets/images/carousel/StarFox.avif'
+import starfoxThumb from '../../../public/assets/images/Icons/starfox.jpg'
+import miiThumb from '../../../public/assets/images/Icons/tomodachi.webp'
+import splatoonThumb from '../../../public/assets/images/Icons/splatoon.png'
+import yoshiThumb from '../../../public/assets/images/Icons/yoshi.png'
 
 
 export function Banner() {
