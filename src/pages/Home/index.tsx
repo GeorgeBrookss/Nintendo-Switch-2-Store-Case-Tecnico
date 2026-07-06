@@ -20,7 +20,7 @@ const Home = () => {
       });
   }, []);
 
-  const promotions = products.filter((p) => p.sale).slice(0, 4);
+  const promotions = products.filter((p) => p.sale).slice(0, 6);
 
   const news = products
     .filter((p) => !p.sale)
@@ -45,20 +45,20 @@ const Home = () => {
             <BlinkBlur color={["#7a1d1d", "#a32727", "#cc3131", "#d75959"]} />
           </div>
         ) : (
-          <>
-            <h2>Promoções</h2>
-            <ListaGames>
-              {promotions.map((p) => (
-                <ProductCard key={p.id} product={p} />
-              ))}
-            </ListaGames>
-
+          <>            
             <h2>Novidades</h2>
             <ListaGames2>
               {news.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
             </ListaGames2>
+
+            <h2>Promoções</h2>
+            <ListaGames>
+              {promotions.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </ListaGames>
           </>
         )}
       </HomePage>

@@ -12,6 +12,7 @@ const categorias: Category[] = [
   "SCIFI",
   "Esporte",
   "Festa",
+  "Simulação",
 ];
 
 const Categorias = () => {

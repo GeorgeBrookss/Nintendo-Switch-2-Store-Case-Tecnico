@@ -5,6 +5,7 @@ export type Category =
     |'SCIFI'
     |'Esporte'
     |'Festa'
+    |'Simulação'
 
 export interface Product {
     id: number
